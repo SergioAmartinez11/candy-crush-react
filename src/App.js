@@ -88,7 +88,7 @@ const App = () => {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7]
             const isFirstRow = firstRow.includes(i)
 
-            if (isFirstRow && currentColorArrangement[i] == blank) {
+            if (isFirstRow && currentColorArrangement[i] === blank) {
                 let randomNumber = Math.floor(Math.random() * candyColors.length)
                 currentColorArrangement[i] = candyColors[randomNumber]
 
@@ -105,11 +105,11 @@ const App = () => {
     const dragDrop = (e) => {
         setSquareBeingReplaced(e.target)
     }
-    const dragEnd = (e) => {
+    const dragEnd = () => {
         const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'))
         const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'))
         currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
-        currentColorArrangement[squareBeingDraggedId] = squareBeingReplacedId.getAttribute('src')
+        currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src')
 
         const validMoves = [
             squareBeingDraggedId - 1,
@@ -129,8 +129,8 @@ const App = () => {
             setSquareBeingDragged(null)
             setSquareBeingReplaced(null)
         } else {
-            currentColorArrangement[squareBeingReplacedId] = squareBeingReplacedId.getAttribute('src')
-            setCurrentColorArrangement[squareBeingDraggedId] = squareBeingDraggedId.getAttribute('src')
+            currentColorArrangement[squareBeingReplacedId] = squareBeingReplaced.getAttribute('src')
+            currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.getAttribute('src')
             setCurrentColorArrangement([...currentColorArrangement])
         }
 

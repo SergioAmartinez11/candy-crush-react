@@ -2,7 +2,7 @@ const ScoreBoard =({puntos}) =>{
     return(
             <div className="score-board">
                 <h2>
-                    Score: {puntos}
+                    Puntos: {puntos}
                 </h2>
             </div>
 
