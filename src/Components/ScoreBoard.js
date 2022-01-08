@@ -6,7 +6,7 @@ const ScoreBoard =({puntos}) =>{
                 </h2>
             </div>
 
-    )
+    );
 }
 
 export default ScoreBoard
