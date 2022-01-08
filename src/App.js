@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import ScoreBoard from "./Components/ScoreBoard";
+import {useEffect, useState} from "react"
+import ScoreBoard from "./Components/ScoreBoard"
 import manitaCandy from './images/manita.png'
 import mazapanCandy from './images/MazapanPNG.png'
 import banderitasCandy from './images/banderita.png'
@@ -170,6 +170,7 @@ const App = () => {
                     <img
                         key={index}
                         src={candyColors}
+                        alt={candyColors}
                         data-id={index}
                         draggable={true}
                         onDragStart={dragStart}
